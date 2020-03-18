@@ -10,7 +10,6 @@ BPLOG_PREFIX="buildpack.clojure"
 export BUILD_DIR=$1
 export CACHE_DIR=$2
 export ENV_DIR=$3
-echo "Build dir: $BUILD_DIR"
 
 BP_DIR=$(cd $(dirname $0)/..; pwd)
 BIN_DIR=$BP_DIR/bin
@@ -63,6 +62,7 @@ else
       export LEIN_NO_DEV=y
     fi
     RLWRAP=yes
+    warning "Build dir: $BUILD_DIR"
     warning "No :min-lein-version found in project.clj; using $LEIN_VERSION.
   You probably don't want this!"
   fi
