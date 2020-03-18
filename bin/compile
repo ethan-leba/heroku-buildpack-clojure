@@ -10,6 +10,7 @@ BPLOG_PREFIX="buildpack.clojure"
 export BUILD_DIR=$1
 export CACHE_DIR=$2
 export ENV_DIR=$3
+echo "Build dir: $BUILD_DIR"
 
 BP_DIR=$(cd $(dirname $0)/..; pwd)
 BIN_DIR=$BP_DIR/bin
